@@ -1,0 +1,69 @@
+Salesforce Data Model:-
+Main Componenets:- 
+
+(1) Accounts:- kinda parent,related to the company which is your client.
+
+(2) Contact:- Child of Account,consists of contact details of any head or sales 
+	      executive of the Client company.
+(3) Opportunities:- Also the child of account. where any Old closed deals as well as new & in-progress deals are present.
+
+(4) Cases:- Related to any issue raised by a customer regarding the usage of any product.
+
+(5) Leads:- All the details regarding the probable customers of yours, or the customers who might buy your product in the forthcoming             days.Once the deal is fixed, the Leads would be converted to an Account, Contact and then the opportunities.
+
+ Next ,We have objects,
+-----------------------------
+    # Objects in Salesforce denote the same as Entity/Table in SQL.
+
+    There are two types of Objects in Salesforce:-
+
+   (i) Standard Objects:- They are the built-in / Pre-defined objects.
+	Ex:- Above objects Like:- Account,Contacts,Opportunities,Leads,Cases.
+
+   (ii)Custom Objects:- Whenever the Standard Objects do not fulfill your needs, you can create the custom/your own objects.
+		       Ex:- Project,Shipping etc.
+
+   We can also Customize objects to have their own fields/columns/attributes.
+   Each Row in an Object is called as a Record/Tuple.
+
+Relationships:-
+----------------------
+It is the way how two Objects are related to each other.
+
+(i) Master-Detail relationship:-
+    ---------------------------
+   => Here the two objects may be having one-to-many relationship or many-to-many relationship.
+   => The two objects are tightly coupled with each other.
+   => So deleting the parent object also deletes the child object.
+
+ Ex:- Accounts(parent) with Contacts(child) is a Master-detail relationship.
+
+(2) Look-up relationship:-
+   ----------------------------
+   => Two Objects may have 1:1 relationship with each other.
+   => It's not mandatory for every object to be in relationship(Look-up).
+   => They can also work independently.
+
+Fields:-(a.k.a Attributes)
+----------------------------
+(i) These are simply the columns which are associated with an Object.
+(ii) Ex- like name,id,department etc.
+
+Fields are to be defined with some datatypes, the same way as of SQL.
+The datatypes are:- text,date,number,phone number,Email,picklist(multivalued),Currency.
+
+# If a field/column's datatype is picklist, it means it is a multivalued attribute.
+ 
+Types Of Fields:-
+(i) PickList Fields:- The field which shows multiple data from which a single one is to be choosen.
+		      The picklist field can also be referred as a multivalued attribute.
+	              We can define the values in a picklist in two ways:- 
+		     --------------------------------------------------------
+		           (i) Global Picklist:- Already predefined value sets,only need to be choosen here.
+			   (ii) Or We can also define our customized values in a text box.
+
+			
+                      
+
+   
+   		   
