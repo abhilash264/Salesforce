@@ -1,0 +1,63 @@
+Navigation:- 
+------------------------------
+Home page Overview:-
+---------------------
+(1) App Launcher:- Whenever you login, you will be moved into the home page where a 3x3 matrix icon is present in the top left corner,
+		   clicking which you can launch various apps like sales-service , components of salesforce 
+		   as well as the recycle bin.
+
+(2) App exchange:- It is a place where different apps made up with salesforce can be sold & purchased,present inside the AppLauncher.
+
+(3) Objects:- These are represented as the tabs in the Navigation bar.This is the same object as we saw in data-model.
+
+(4) Global Serach:- The search bar at the top of the home page.
+
+(5) Setup:- The settings icon in the home-page which is used to  modify the front-end part. This also redirects to the Object manager.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+List View Overview:- 
+--------------------
+(1) When ever we'll click any of the objects/tabs in the navigation bar of Home page , it will redirect you to the List View of the 
+    Object. The List View consists mainly of the Fields & Records Associated with that Object.
+
+(2) Assume the Objects to be the Database Tables, Fields to be the Attributes/columns , Records to be the rows...and the List View to  
+    be the Database Schema.
+
+(3) We can also customize the list-view by filtering out some records as well.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+Record View Overview:-
+-----------------------
+(1) So,In List View there would be many records available.
+
+(2) So We can click on each record, to move to the Record View Page.
+
+(3) Record view consists of :- 
+--------------------------------
+    (i) Record details:- It comprises of more appropriate/detailed information of a Record.
+    (ii) Related Records:- It is used effectively to connect different objects so that there would not be any duplicate records.
+    (iii) Compact Layout:- To Show-up an important detail at top of the Record View Page.
+    (iv) Global Actions:- To create Records,send Emails for other records without leaving the Current Record.
+
+Set-Up View:-
+---------------
+(1) Quick-find
+(2) Object Manager:- consists of all the objects defined in your Salesforce Org.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What is sandbox in Salesforce?
+A sandbox is a copy of your organization in a separate environment that you can use for a variety of purposes, such as testing and training , debugging. Sandboxes are completely isolated from your Salesforce production organization. The operations you perform in your sandboxes don't affect your Salesforce production organization.
