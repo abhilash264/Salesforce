@@ -1,0 +1,206 @@
+Salesforce Data Model:-
+Main Componenets:- 
+
+(1) Accounts:- kinda parent,related to the company which is your client.
+
+(2) Contact:- Child of Account,consists of contact details of any head or sales 
+	      executive of the Client company.
+(3) Opportunities:- Also the child of account. where any Old closed deals as well as new & in-progress deals are present.
+
+(4) Cases:- Related to any issue raised by a customer regarding the usage of any product.
+
+(5) Leads:- All the details regarding the probable customers of yours, or the customers who might buy your product in the forthcoming             days.Once the deal is fixed, the Leads would be converted to an Account, Contact and then the opportunities.
+
+ Next ,We have objects,
+-----------------------------
+    # Objects in Salesforce denote the same as Entity/Table in SQL.
+
+    There are two types of Objects in Salesforce:-
+
+   (i) Standard Objects:- They are the built-in / Pre-defined objects.
+	Ex:- Above objects Like:- Account,Contacts,Opportunities,Leads,Cases.
+
+   (ii)Custom Objects:- Whenever the Standard Objects do not fulfill your needs, you can create the custom/your own objects.
+		       Ex:- Project,Shipping etc.
+
+   We can also Customize objects to have their own fields/columns/attributes.
+   Each Row in an Object is called as a Record/Tuple.
+
+Relationships:-
+----------------------
+It is the way how two Objects are related to each other.
+
+(i) Master-Detail relationship:-
+    ---------------------------
+   => Here the two objects may be having one-to-many relationship or many-to-many relationship.
+   => The two objects are tightly coupled with each other.
+   => So deleting the parent object also deletes the child object.
+
+Ex:- Accounts(parent) with Contacts(child) is a Master-detail relationship in back-end but they have a look-up relationship in the UI.
+
+(2) Look-up relationship:-
+   ----------------------------
+   => Two Objects may have 1:1 relationship with each other.
+   => It's not mandatory for every object to be in relationship(Look-up).
+   => They can also work independently.
+
+=> Schema Builder is used to identify the relationships between the OBJECTS.
+
+Fields:-(a.k.a Attributes)
+----------------------------
+(i) These are simply the columns which are associated with an Object.
+(ii) Ex- like name,id,department etc.
+
+Fields are to be defined with some datatypes, the same way as of SQL.
+The datatypes are:- text,date,number,phone number,Email,picklist(multivalued),Currency.
+
+# If a field/column's datatype is picklist, it means it is a multivalued attribute.
+ 
+Types Of Fields:-
+(i) PickList Fields:- The field which shows multiple data from which a single one is to be choosen.
+		      The picklist field can also be referred as a multivalued attribute.
+	              We can define the values in a picklist in two ways:- 
+		     --------------------------------------------------------
+		           (i) Global Picklist:- Already predefined value sets,only need to be choosen here.
+			   (ii) Or We can also define our customized values in a text box.
+
+			
+(ii) Formula fields:- These are the fields calculated by the formula you define.
+                      It derives the values from other fields ,do operations b/w them & display the result based on the given formula.
+(iii) Roll-up Summary Field:- It is used to have the summary calculation of a particular field of an object.
+			     Ex:- Sum(),Count(),Max(),Min().
+
+Page Layouts:- It is the way how the fields would be shown to a particular user.
+-------------  We can customize the fields to be hidden/read-only etc.
+	       Customizing the page-layout would help us to show relevant data to the appropriate users.
+
+Record types
+-------------- means each Object's record would be divided into multiple categories...for example
+
+The Opportunity object's record can be divided into let say two types:- buyers & sellers.
+ So those who are the buyer's could see the buyer's record and those who are the sellers could see the seller's record ..
+
+And all those can be viewed through the same Opportunity object through different page layouts..
+
+Data Security framework (W.R.T an Employee of an ORG).--> Users simply means the employee of an organisation.
+-----------------------------------------
+Consists of 4 Levels of Access.
+
+(i) Organizational level Access for an Employee.
+(ii) Object Level Access for an Employee.
+(iii) Record Level Access for an Employee.
+(iv) Field level Access for an Employee.
+
+Organizational level Access
+------------------------------
+It deals with:-
+(i) Who has access to our organisation.(need to provide the Username & password).
+(ii) Where can the Employees login from..(Login IP Address)..as its all about security from any one pretending to be an employee
+(iii) When can the Employees login....(login hours).
+
+Object level access:-
+--------------------------
+Salesforce license:- It determines what profiles(the designations) the Employees can have.
+
+Next:- To differentiate b/w roles and profiles, a short formula can be made.
+       I.E. ROLES SEE,PROFILES DO. Roles deal with Records where as Profiles deal with Objects & Fields.
+
+=> Profiles
+----------- => simply defines the work/task of a particular user/Employee of an object. It deals with having the CRED Operations.
+
+=> Permission sets
+------------------ => are just the add-ons to the profile to give some extra access to an Employee to perform a special task 		      on objects.
+
+=> One Employee can have Only One Profile.
+
+=> One Profile can have many Permission Sets.
+
+Permission Set Groups
+---------------------- => are used to bundle up all the permission-sets as if it were a single permission set.
+                          Used especially when single/mutiple profiles are having multiple permission sets.
+	Ex:-	 
+		permission set 1-------------> Profile-1
+
+		permission set 2-------------> Profile-1
+
+		permission set 3--------------> Profile-1
+	        
+=> Permission set groups are used to make complex things simpler.
+
+The above Schema can be represented as:- 
+  A Single Permission set_Group can consist of permission set-1,permission set-2 & permission set-3 which will as a whole point out to 
+  Profile-1.
+	    i.e.--->   Permission set_global-------------->profile1
+
+
+Record Level Access:- It deals with the privacy of the records of Employee of an org.
+--------------------
+Although we have seen the Object level access thorugh the Profiles,permission sets etc....
+
+But what about the Record(Row) level access.....
+
+Records can be restricted initially and Salesforce deals with opening up records with different terminologies like:-----
+
+(1) Organisational Wide Defaults:- It is the most restrictive , baseline  which deals with an organisation's Employees rather than a 				   group/person...
+	By default, it has certain modes like:- 
+				  (i) Private
+				  (ii) Public read/write
+				  (iii) public read/write/transfer.
+				  (iv) Public full access
+(*) Here in OWD if the record is set to be private by an Employee it means the other Employees can't see the data/record of that     Employee.
+(*) Similarly,If the record is set public read/write then the other Employees will only be able to read the records or write the         records. & so on for other modes.
+
+(2) Roles & Roles-Hierarchy:- It is the next linient one in which records can be accesssed based on role of an Employee.
+    (Vertical Access)	      The Role hierarachy states that An Employee can only see the records of his own , as well as the roles 			              just below it.
+	(*) It gives some amount of less restriction in comparison to organisation wide-default where in OWD if the record is private 	   	    it means  no other Employee will be able to see the records.....
+
+	(*) Where as in roles-roles hierarchy, Any Employee X can see the private records of Employee Y if X is at the upper level of 	            Y in role hierarchy.
+
+
+(3) Sharing Rules :- Sharing the records which are not possible through role hierarchy & OWD. In sharing rule, Owner denotes to Owner 	
+-------------------	 of a record, not upper levels in role hierarchy. So the owner can be any individuals or even siblings in role 			 hierarchy who have their own records.
+   
+	(i) Owner-based Sharing Rules:-(*) If one sibling in role hierarchy wants to send data/records to another sibling,					  		   then we can use the Owner-based Sharing Rules.
+
+				       (*) If One individual owner wants to share data to one public group(group of owners), then 
+					   we can use the Owner-based Sharing Rules.
+       	   In summary, Owner based sharing rule, can be applied on individual to individual data transfer. or individual to a public 	           group (group of individuals) data transfer.
+
+	(ii) Criteria-based Sharing Rules:- Here the data transfer wouldn't be based on Owner of a record, rather than it is based on
+					    a criteria.
+					    For ex:- If we want to share records where department is IT, so we can share the data 						     to those who want the records based on department='IT'.
+
+        public group:- A group of people belonging to different profiles.
+
+(4) Manual Sharing:- It means we can manually click the share button to share the records to any group or any individual.
+
+Field level Access:-   Can be called same as Object level Access.
+-------------------    Which works well with permission sets.
+ 
+
+Extra points:-
+--------------------------------------------------------------------------------------------------------------------------------------
+(1) We can make a field required by two ways:- Universally required & Required at page level.
+	
+ => Universally Required:- It is applied whenever there is a single page-layout.
+ => Required at page level:- It is applied whenever there are more than one page layout.
+
+ 
+				       
+
+
+
+
+
+
+
+
+
+
+
+	
+		             
+
+
+   
+   		   
