@@ -44,6 +44,22 @@ Set-Up View:-
 (1) Quick-find
 (2) Object Manager:- consists of all the objects defined in your Salesforce Org.
 
+Lighting Page View:-
+---------------------
+Lightning page customization
+----------------------------
+Lightning page is the name of the edited version of our Record page.
+Now ,currently we are at the Record View page.
+(1) We can customize the record view page by going through the gear icon(the same settings icon through which we go to the Setup). and by clicking Edit Page.
+(2) The Edit page will redirect us to the Lightning page layout from which we can customize the current Record Page.
+
+The Lighting page layout contains:-
+	(i) Components :- Present at the left hand side of the Lightning page & Contains all standard & custom components which we can drag & drop to the canvas to 			      customize our lightning page(record page).
+	(ii) Canvas:- It is the part of our Lightning page layout, on which we can drag & drop the components to give a new view to our lightning page.
+	(ii) Header:- Header consist of the Pages button , which shows the last 10 modified lightning pages of our App.
+		      It also shows the page Name(Account Record Page) which we are customizing.
+
+
 
 
 
