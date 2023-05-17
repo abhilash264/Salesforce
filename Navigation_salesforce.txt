@@ -56,10 +56,21 @@ Now ,currently we are at the Record View page.
 The Lighting page layout contains:-
 	(i) Components :- Present at the left hand side of the Lightning page & Contains all standard & custom components which we can drag & drop to the canvas to 			      customize our lightning page(record page).
 	(ii) Canvas:- It is the part of our Lightning page layout, on which we can drag & drop the components to give a new view to our lightning page.
-	(ii) Header:- Header consist of the Pages button , which shows the last 10 modified lightning pages of our App.
+	(iii) Header:- Header consist of the Pages button , which shows the last 10 modified lightning pages of our App.
 		      It also shows the page Name(Account Record Page) which we are customizing.
+		      
+		
+		
+=> lighting app builder:-
+-----------------------------
+            It is used to create a whole new lightning app/ Application for our organisation. We can
+            create a lightening app by moving to :--- setup----Quick find---> search for the lightening App Builder.
+	
+        
+ 
+       lightning knowledge:- It contains the helpful articles/documentation that could be useful for your organisation.
 
-
+       lightning console:- It is kind an app that is used to see mutiple records and related records on a single screen
 
 
 
