@@ -1,0 +1,149 @@
+			Reports & DashBoards
+		-------------------------------------------
+(1) Reports:-These are used to compile information by customizing the records & Fields based on some Query. These are used for 	     Analytics part.
+	     Reports are simply the answers to a particular query where the query wants something related to data as the answer.
+
+(2) Report Types:- Whenever you will go to the Reports tab in the Navigation-bar(top middle) of the Home Page View & then to New Report, You Would be asked to create a new Report type from pre-created/standard Report-types & you need to choose from them.
+
+=> But In Salesforce, if we want to create the custom Report types, we can move to setup--> Quick find---> Type out...(Report Types.).
+
+=> After Creating the Report Types, We can create the New Report by choosing any of the Report Types , editing the fields & finally you have created 1 report.
+
+=> In Report Building phase, we can only see maximum of 20 records not all the available records , To see all available records we 
+   need to save the records and run it.
+
+   So, Report Types consists of:-
+	(i) Objects  (One primary object & maximum 3 secondary objects).
+        (ii) The Relationship between the Objects. ==> whether inner join or left Outer Join.
+	(iii) Fields to be edited ( Although the relationship would have fetched all the available fields, but we can also 	              customize the required fields as well , as per our business need).
+
+Let's define the above three points:-
+
+(a) Objects :- These are Simply the Standard Objects/ Custom Objects Like:- Account,Cases,Oppotunities etc.	
+	      => There must be a single Primary object ( let say Account) and attached to it are the Secondary Objects 
+		 like Opportunities, Cases,Contacts etc. Having Secondary Objects are Optional. But Having a primary object is 
+		 mandatory.
+	      
+	      => The Primary object is also called as Key Metrics.
+	   (*) In a Single Report type, we can have maximum of 4 Objects.(one is the primary object,& Rest 3 can be secondary objects)
+
+			The Real Case Example between the Primary Object & Secondary Object is:- 
+			  (*) Accounts with Contacts. ( 2 objects in relation).
+			  (*) Opportunities with Cases.( ' ' ).
+			  (*) Accounts with Contacts with Opportunities.( 3 objects in relation).
+			  
+			
+			  Here "with" represents that the two objects are related to each other.
+			  The above three examples are in the same form as like it is in the Salesforce Reports Section to choose a 			          new Report type.
+
+(b) The Relationship b/w the Objects... (One Report type can contain maximum of 4 Objects being related to each other).
+   --------------------------------------
+    (1) Inner join :- If this is the case, then only those records will be displayed which are common in Objects 'A' and 'B'.
+    
+    (2) Left Outer Join:- It will have All the Records from 'A' and the matching records from 'B'...Those records in 'A' who do not
+			  have any matching record, then there will be null assigned for it.
+
+    The Type of Relationship actually fetches & defines the number of records to be present in our Report.
+
+    One Report can consist of maximum of 2000 records, before its being exported.
+	
+	        
+   
+	      
+(c) Fields to be added:- We can Customize to show up the required fields in our Report.
+   --------------------
+
+
+(3) Report Formats:- This is the way how the Reports would be presented. There are 4 types of Report Formats:-
+   -----------------    (i) Tabular :- This is all about arranging the data in a list format.
+			(ii) Summary:- It is used for grouping & summarizing the data.
+			(iii) Matrix:- It is also used for grouping & summarizing with the help of Rows & Columns.
+                        (iv) Joined:- Here Multiple reports are joined together to form a Single Report.
+
+(4) Report filter:- Filtering out the essential data of a Report based on a condition & hiding the unneccessary data .
+--------------------
+
+
+Report Filter can be done in two ways:-
+---------------------------------------
+
+With Formula:-
+-----------------
+(a)  Row-level Formulas:- This , we can use to quickly/in a faster way filter out the data , by creating a formula , placing it in the 		          Reports Page ,So that by just clicking on it, we can easily filter out the data .
+
+                        Ex:- Finding the sales report of the State where State='Odisha'.
+		=> One Report can contain only One Row-Level Formula.
+
+(b) Summary Formulas:- Used to have Aggregate function results.
+		   i.e. In order to have some Sum,Average based Results.
+		 
+		  Ex:- Total Revenue Collected by the Team.
+		       Maximum Products sold in the previous month.
+
+	=> One Report can contain maximum of 5 Summary Forumulas.
+
+Without Formula:-
+-----------------------
+(a) Bucket Columns:- It is the Way to Filter out the data without having any Formulas......
+
+
+(5) Subscribing to Reports:-
+   -------------------------
+
+Now we have fully created the Reports:-    
+	=> So the Reports can be accessed by subscribing to it...
+	=> The subscribers can get the Reports via their Emails either daily/weekly/monthly.
+
+(6) Exporting the Reports (it is based on exporting the Reports , to the Subscribers in a particular extension file).
+    ---------------------------------------------------------------------------------------------------------
+    It can be done in two ways:-
+	(i) Formatted Report:- We particularly use .XLSX to export the Formatted Reports where Formatted Reports contains data 			       represented in a Visulized manner.
+	(ii) Details only view:- Here We use .XLS or .CSV format to Export only detailed/text based data.
+
+
+(7) Security of Reports and Dashboards:-
+   ----------------------------------------
+   (a) The Reports and Dashboards are placed inside the Folders , which can be accesed based on the Permissions as well as the access          level.
+	The Operations are:- 
+		(i) View:- One can only view the Folder ---> Reports & dashboards.
+        	(ii) Edit:- One non-owner of the folder who can edit the folder if permitted.
+		(iii) Manage:- The Owner of the Folder who manages everything.
+
+
+
+DashBoards:---
+----------------------
+=> Reports does have Charts to Visually Show up the Data , But It's better to have DashBoards in order to segregate the working of Report Building & Report Display. & Dashboards also provide mutliple components apart from Charts to visualize the data.
+=> That's how Dashboards came into the picture.
+=> Dashboard take up the Reports and visualize their datas through the Dashboard Components.
+
+So A dashboard consists of:-
+
+(1) Dashboard Components:- 
+  --------------------------
+   => Data can be visualized in a dashboard through the help of dashboard components like :- Graphs , Charts, gaudges , line-charts,
+		metrics, pie-charts , vertical bar charts, horizontal bar charts, pies, funnels etc.
+		
+(2) Dashboard Filters:- 
+  --------------------------
+ => We can filter out the data in a dashboard using the Dashboard filters.
+
+(3) Dashboard Subscription:-
+------------------------------
+   Same as the Report Subscription.
+
+(4) Static Dashboard vs Dynamic Dashboard:-
+  ------------------------------------------
+  => Here Static Dashboard are the normal dashboards where data can be related to multiple users.....
+     Ex:- Showing the sales of a product in a Region / State / Country.
+
+  => Dynamic Dashboards are the specific dashboards where data is related to a single user. 
+	For Ex:- An Employee's Personal information/private information.
+
+So Tip is :-
+    => Create Static dashboards whenever you want display Organisational level data.
+    => Create Dynamic dashboards whenevr you want to display personal / private data.
+
+(5) Reports & Dashboard Security:- Same as we have seen in Reports.(Above).
+
+
